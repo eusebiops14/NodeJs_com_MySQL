@@ -1,6 +1,7 @@
 //Usar na aula 12- Handlebars com node.js
 //link: https://www.youtube.com/watch?v=kK98Qr03qNo&list=PLmY5AEiqDWwBHJ3i_8MDSszXXRTcFdkSu&index=12
 
+//Importar pacotes necessarios
 const express = require("express");
 const app = express();
 const {engine} = require("express-handlebars"); //no video ele passa handlebars ao inves de engine aqui, mas da erro (https://stackoverflow.com/questions/69962757/typeerror-handlebars-is-not-a-function)
