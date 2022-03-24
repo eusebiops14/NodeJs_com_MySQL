@@ -1,0 +1,70 @@
+-Node.js não é uma linguagem de programação- você programa em JavaScript
+-Node roda em uma JavaScript V8 VM
+-Node.js é uma tecnologia assíncrona- delega quais atividades devem ser executadas primeiro
+-Permite trabalhar no front e no back-end
+
+1)INSTALAR NODE.js
+    -versão LTS (Long Term Support)
+
+4) Framework Express - Trabalha com rotas
+    https://expressjs.com/pt-br/
+    npm i express --save
+
+5) Nodemon
+    npm i -g nodemon
+
+6) Carregar arquivo HTML na pagina com node usando sendFile
+
+7) Banco de Dados MySQL 
+    -Configurar variáveis de ambiente: C:\Program Files\MySQL\MySQL Server 8.0\bin
+    - checar em serviços se o MySQL está executando
+    -No terminal de comando:
+        -mysql -h localhost -u root -p 
+        -enter password: ______________
+        -Após entrar no banco de dados (via prompt):
+            >SHOW DATABASES;
+            >CREATE DATABASE celke;    
+            >USE celke;
+            >CREATE TABLE users (nome VARCHAR(220), email VARCHAR(220));
+            >SHOW TABLES;
+            >INSERT INTO users (name, email) VALUES ('Cesar','cesar@teste.com');
+            >SELECT * FROM users;
+            >EXIT
+
+    -Instalar MySql WorkBench - Interface gráfica para mysql
+        https://www.youtube.com/watch?v=5JnPd_YckQw&list=PLmY5AEiqDWwBHJ3i_8MDSszXXRTcFdkSu&index=7
+
+     -Conectando banco de dados MySQL com o projeto
+        -Iniciando o projeto pelo terminal: npm init (CRIA ARQUIVO PACKAGE.JSON)
+        - Instalando Biblioteca mysql no node:
+            > ver www.npmjs.com/package/mysql#install
+            > npm install mysql --save (o --save inclui salva o pacote no arquivo package.json)
+        -Criando novo usuario no banco de dados MySQL através do cmd:
+            > CREATE USER 'celkeone'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';    
+            > GRANT ALL PRIVILEGES ON * . * TO 'celkeone'@'localhost';
+                * Continuou dando erro mesmo usando essas duas linhas de comando no MySQL- solucao foi usar o pacote mysql2:
+                    > npm un mysql  (desinstala o package)
+                    > npm i mysql2 (instala package atualizado) 
+
+    11) Usando Sequelize no Node.js
+        -Usar arquivo app2.js para essa aula 
+        -Sequelize permite manipular varios bancos de dados usando metodos do JavaScript
+        -Sequelize torna mais facil a manipulação de dados dispensando a necessidade de fazer as declarações em SQL puro
+        - instalar sequelize:
+            >npm install --save sequelize
+            >npm install --save mysql2 (indica Bd que estamos usando)
+
+    12) Handlebars para criar layout padrão do projeto
+        - https://handlebarsjs.com/
+        - npm install --save express-handlebars (o express informa que estamos usando handlebars com o express) 
+
+    13) Criar Formulário com node e salvar no banco de dados
+        -link aula: https://www.youtube.com/watch?v=LAK1XptdZX8&list=PLmY5AEiqDWwBHJ3i_8MDSszXXRTcFdkSu&index=13
+        - usar arquivo app3.js
+        -Método post para enviar os dados do formulário para o banco de dados
+        - usamos o bodyParser
+            > npm install --save body-parser 
+
+    14) Listar registros do banco de dados com NodeJs
+        -sequelize.findAll (https://sequelize.org/v6/manual/model-querying-finders.html)
+        - npm install --save moment
